@@ -3,132 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guía de Eurolatam Dungeon Heroes</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1e1e1e;
-            color: #f5f5f5;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: #4a148c;
-        }
-        header h1 {
-            margin: 0;
-            color: #fff;
-        }
-        .section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 20px;
-            padding: 20px;
-            background-color: #2e2e2e;
-            border-radius: 10px;
-        }
-        .section:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-        .section img {
-            max-width: 40%;
-            border-radius: 10px;
-        }
-        .section div {
-            max-width: 55%;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #4a148c;
-            color: #fff;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+    <title>Eurolatam Dungeon Heroes - Guía de Clases</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Guía de Eurolatam Dungeon Heroes</h1>
-    </header>
+    <div class="icon-container">
+        <div class="icon" data-name="Guerrero" data-description="El Guerrero es una clase fuerte y resistente, ideal para el combate cuerpo a cuerpo." data-img="guerrero.jpg">
+            <img src="guerrero-icon.png" alt="Guerrero">
+        </div>
+        <div class="icon" data-name="Mago" data-description="El Mago tiene poderosos hechizos, perfecto para el combate a larga distancia." data-img="mago.jpg">
+            <img src="mago-icon.png" alt="Mago">
+        </div>
+        <!-- Agrega más iconos según sea necesario -->
+    </div>
+    
+    <div class="tooltip">
+        <h3 id="class-name"></h3>
+        <p id="class-description"></p>
+        <img id="class-img" src="" alt="Clase">
+    </div>
 
-    <main>
-        <section class="section">
-            <div>
-                <h2>Calidad sobre cantidad</h2>
-                <p>Cualquier contenido o mecánica que añadas al juego será algo con lo que las personas invertirán su tiempo valioso. Merecen lo mejor que podamos ofrecer con un esfuerzo razonable.</p>
-                <ul>
-                    <li>Los hechizos recién añadidos deberían tener alguna mecánica o característica única.</li>
-                    <li>Los hechizos que son solo versiones recoloreadas de otros existentes no son recomendables.</li>
-                    <li>Un conjunto con un arte de alta calidad es preferible a tres conjuntos con arte mediocre.</li>
-                </ul>
-            </div>
-            <img src="https://via.placeholder.com/300x200" alt="Calidad sobre cantidad">
-        </section>
-
-        <section class="section">
-            <div>
-                <h2>Libertad de elección</h2>
-                <p>No crees requisitos estrictos para equipar o usar objetos/hechizos, ya que:</p>
-                <ul>
-                    <li>A menudo son poco intuitivos y difíciles de explicar a los jugadores.</li>
-                    <li>No encajan con el flujo natural del juego, donde no existen tales restricciones.</li>
-                </ul>
-                <p><b>Alternativa:</b> Ajusta los atributos de los objetos para que sean más óptimos para ciertas configuraciones, pero menos efectivos para otras.</p>
-            </div>
-            <img src="https://via.placeholder.com/300x200" alt="Libertad de elección">
-        </section>
-
-        <section class="section">
-            <div>
-                <h2>Obsolescencia</h2>
-                <h3>Clases</h3>
-                <p>Todas las clases jugables deben ser aproximadamente iguales en términos de utilidad, con diferentes fortalezas y debilidades que se complementen entre sí.</p>
-                <p>Ejemplo:</p>
-                <ul>
-                    <li>Guerreros: Altamente blindados, con daño moderado en combate cuerpo a cuerpo, capaces de soportar muchos ataques.</li>
-                    <li>Magos: Con poca armadura, causan alto daño mágico, pero soportan pocos ataques.</li>
-                </ul>
-                <h3>Equipamiento</h3>
-                <p>Las nuevas piezas no deben hacer obsoletas las existentes ni alterar el equilibrio entre clases.</p>
-            </div>
-            <img src="equip.webp" alt="Obsolescencia">
-        </section>
-
-        <section class="section">
-            <div>
-                <h2>Balance</h2>
-                <h3>Atributos</h3>
-                <p><b>Armadura:</b> El peso determina qué tan blindada está una clase. El bono de armadura debe mantenerse uniforme para evitar borrar las debilidades de ciertas clases.</p>
-                <p>Categorías:</p>
-                <ul>
-                    <li>Ligera (8-10 🛡️): Magos, Sacerdotes.</li>
-                    <li>Media (10-14 🛡️): Arqueros, Pícaros.</li>
-                    <li>Pesada (16-20 🛡️): Paladines, Guerreros.</li>
-                </ul>
-                <p><b>Daño de ataque:</b> Bonos fijos para armas y porcentuales para armaduras y abalorios.</p>
-                <p><b>Poder mágico:</b> Sigue la misma lógica, evitando bonos fijos en armaduras excepto para paladines.</p>
-            </div>
-            <img src="https://via.placeholder.com/300x200" alt="Balance">
-        </section>
-
-        <section class="section">
-            <div>
-                <h2>Caso de estudio: Caballeros de la Muerte de Escarcha</h2>
-                <p>Diseñados como una clase de armadura pesada con daño híbrido. Para integrarlos al juego, se debe evitar conflictos con:</p>
-                <ul>
-                    <li>Equipamiento de guerreros.</li>
-                    <li>Equipamiento de magos de escarcha.</li>
-                </ul>
-                <p><b>Solución:</b> +10% Poder mágico, +2% Daño de ataque, +3-5 Armadura. Así, los DK tendrán equipos genéricos, pero su set óptimo será único.</p>
-            </div>
-            <img src="https://via.placeholder.com/300x200" alt="Caso de estudio">
-        </section>
-    </main>
-
+    <script src="script.js"></script>
 </body>
 </html>
