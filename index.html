@@ -3,54 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eurolatam Dungeon Heroes - Guía de Clases</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Eurolatam Dungeon Heroes</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #f0d000;
+            padding: 20px 0;
+        }
+
+        .class-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .class {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+        }
+
+        .class img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .class:hover img {
+            transform: scale(1.1);
+        }
+
+        .description {
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            text-align: left;
+        }
+
+        .description img {
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+
+        .class:hover .description {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <!-- Imagen de logo en la parte superior -->
-        <img src="logo.png" alt="Eurolatam Dungeon Heroes" class="logo">
+    <header class="logo">
+        Eurolatam Dungeon Heroes
     </header>
-    
-    <div class="icon-container">
+    <section class="class-container">
         <!-- Arquero -->
-        <div class="icon" data-name="Arquero" data-description="Especialista en combate a larga distancia con arco y flecha. Ágil y letal en el campo de batalla." data-img="arquero.jpg">
-            <img src="arquero-icon.png" alt="Arquero" class="icon-img">
+        <div class="class">
+            <img src="arquero.png" alt="Arquero">
+            <div class="description">
+                <strong>Arquero:</strong> Especialista en combate a larga distancia con arco y flecha. Ágil y letal en el campo de batalla.
+                <img src="arquero-desc.png" alt="Imagen del Arquero">
+            </div>
         </div>
-        
+
         <!-- Paladín -->
-        <div class="icon" data-name="Paladín" data-description="Guerrero sagrado, defensor del bien, que lucha con una espada y una fe inquebrantable." data-img="paladin.jpg">
-            <img src="paladin-icon.png" alt="Paladín" class="icon-img">
+        <div class="class">
+            <img src="paladin.png" alt="Paladín">
+            <div class="description">
+                <strong>Paladín:</strong> Guerrero sagrado, defensor del bien, que lucha con un mazo y una fe inquebrantable.
+                <img src="paladin-desc.png" alt="Imagen del Paladín">
+            </div>
         </div>
 
         <!-- Sacerdote -->
-        <div class="icon" data-name="Sacerdote" data-description="Líder espiritual que usa magia divina para sanar a sus compañeros y maldecir a sus enemigos." data-img="sacerdote.jpg">
-            <img src="sacerdote-icon.png" alt="Sacerdote" class="icon-img">
+        <div class="class">
+            <img src="sacerdote.png" alt="Sacerdote">
+            <div class="description">
+                <strong>Sacerdote:</strong> Líder espiritual que usa magia divina para sanar a sus compañeros y maldecir a sus enemigos.
+                <img src="sacerdote-desc.png" alt="Imagen del Sacerdote">
+            </div>
         </div>
 
         <!-- Pícaro -->
-        <div class="icon" data-name="Pícaro" data-description="Astuto y sigiloso, el pícaro se especializa en el robo, el sigilo y el combate con dagas." data-img="picaro.jpg">
-            <img src="picaro-icon.png" alt="Pícaro" class="icon-img">
+        <div class="class">
+            <img src="picaro.png" alt="Pícaro">
+            <div class="description">
+                <strong>Pícaro:</strong> Astuto y sigiloso, el pícaro se especializa en el robo, el sigilo y el combate con dagas.
+                <img src="picaro-desc.png" alt="Imagen del Pícaro">
+            </div>
         </div>
 
         <!-- Guerrero -->
-        <div class="icon" data-name="Guerrero" data-description="Clase fuerte y resistente, ideal para el combate cuerpo a cuerpo y la defensa de su equipo." data-img="guerrero.jpg">
-            <img src="guerrero-icon.png" alt="Guerrero" class="icon-img">
+        <div class="class">
+            <img src="guerrero.png" alt="Guerrero">
+            <div class="description">
+                <strong>Guerrero:</strong> Clase fuerte y resistente, ideal para el combate cuerpo a cuerpo y la defensa de su equipo.
+                <img src="guerrero-desc.png" alt="Imagen del Guerrero">
+            </div>
         </div>
 
         <!-- Mago -->
-        <div class="icon" data-name="Mago" data-description="Maestro de las artes arcanas, el mago lanza poderosos hechizos a distancia, controlando los elementos." data-img="mago.jpg">
-            <img src="mago-icon.png" alt="Mago" class="icon-img">
+        <div class="class">
+            <img src="mago.png" alt="Mago">
+            <div class="description">
+                <strong>Mago:</strong> Maestro de las artes arcanas, el mago lanza poderosos hechizos a distancia, controlando los elementos.
+                <img src="mago-desc.png" alt="Imagen del Mago">
+            </div>
         </div>
-    </div>
-    
-    <div class="tooltip">
-        <h3 id="class-name"></h3>
-        <p id="class-description"></p>
-        <img id="class-img" src="" alt="Clase">
-    </div>
-
-    <script src="script.js"></script>
+    </section>
 </body>
 </html>
-
