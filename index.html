@@ -28,6 +28,8 @@
             cursor: pointer;
         }
 
+        .header a:hover, .header span:hover {
+            text-decoration: underline;
         }
 
         .logo {
@@ -93,7 +95,7 @@
     <script>
         function copyToClipboard(text) {
             navigator.clipboard.writeText(text).then(() => {
-                alert("¡IP al portapapeles!");
+                alert("¡IP copiada al portapapeles!");
             }).catch(err => {
                 alert("Error al copiar el texto: " + err);
             });
@@ -107,10 +109,10 @@
     </header>
     <main>
         <div class="logo">
-            Eurolatam Dungeon Heroes
+            <img src="background.jpg" alt="LOGO">
         </div>
         <section class="class-container">
-                 <!-- Arquero -->
+        <!-- Arquero -->
         <div class="class">
             <img src="arquero-icon.png" alt="Arquero">
             <div class="description">
