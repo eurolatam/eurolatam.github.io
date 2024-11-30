@@ -1,28 +1,18 @@
-const icons = document.querySelectorAll('.icon');
-const tooltip = document.querySelector('.tooltip');
-const className = document.getElementById('class-name');
-const classDescription = document.getElementById('class-description');
-const classImg = document.getElementById('class-img');
+// Crear efecto de nieve
+function createSnow() {
+    const snowContainer = document.createElement('div');
+    snowContainer.classList.add('snow');
+    document.body.appendChild(snowContainer);
 
-icons.forEach(icon => {
-    icon.addEventListener('mouseenter', (e) => {
-        const name = e.currentTarget.getAttribute('data-name');
-        const description = e.currentTarget.getAttribute('data-description');
-        const imgSrc = e.currentTarget.getAttribute('data-img');
-        
-        className.textContent = name;
-        classDescription.textContent = description;
-        classImg.src = imgSrc;
+    for (let i = 0; i < 100; i++) {
+        const flake = document.createElement('div');
+        flake.classList.add('flake');
+        flake.style.left = `${Math.random() * 100}vw`;
+        flake.style.animationDuration = `${Math.random() * 5 + 5}s`; // Aleatorio entre 5s y 10s
+        flake.style.animationDelay = `${Math.random() * 5}s`; // Aleatorio para que no caigan todos al mismo tiempo
+        snowContainer.appendChild(flake);
+    }
+}
 
-        tooltip.style.display = 'block';
-    });
-
-    icon.addEventListener('mouseleave', () => {
-        tooltip.style.display = 'none';
-    });
-
-    icon.addEventListener('mousemove', (e) => {
-        tooltip.style.left = e.pageX + 10 + 'px';
-        tooltip.style.top = e.pageY + 10 + 'px';
-    });
-});
+// Iniciar el efecto de nieve
+createSnow();
