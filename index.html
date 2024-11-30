@@ -13,44 +13,42 @@
     </header>
     
     <div class="icon-container">
-        <!-- Clases (iconos) -->
+        <!-- Arquero -->
         <div class="icon" data-name="Arquero" data-description="Especialista en combate a larga distancia con arco y flecha. Ágil y letal en el campo de batalla." data-img="arquero.jpg">
             <img src="arquero-icon.png" alt="Arquero" class="icon-img">
         </div>
-        <div class="icon" data-name="Paladín" data-description="Guerrero sagrado, defensor del bien, que lucha con unmazoa y una fe inquebrantable." data-img="paladin.jpg">
+        
+        <!-- Paladín -->
+        <div class="icon" data-name="Paladín" data-description="Guerrero sagrado, defensor del bien, que lucha con una espada y una fe inquebrantable." data-img="paladin.jpg">
             <img src="paladin-icon.png" alt="Paladín" class="icon-img">
         </div>
+
+        <!-- Sacerdote -->
         <div class="icon" data-name="Sacerdote" data-description="Líder espiritual que usa magia divina para sanar a sus compañeros y maldecir a sus enemigos." data-img="sacerdote.jpg">
             <img src="sacerdote-icon.png" alt="Sacerdote" class="icon-img">
         </div>
+
+        <!-- Pícaro -->
         <div class="icon" data-name="Pícaro" data-description="Astuto y sigiloso, el pícaro se especializa en el robo, el sigilo y el combate con dagas." data-img="picaro.jpg">
             <img src="picaro-icon.png" alt="Pícaro" class="icon-img">
         </div>
+
+        <!-- Guerrero -->
         <div class="icon" data-name="Guerrero" data-description="Clase fuerte y resistente, ideal para el combate cuerpo a cuerpo y la defensa de su equipo." data-img="guerrero.jpg">
             <img src="guerrero-icon.png" alt="Guerrero" class="icon-img">
         </div>
+
+        <!-- Mago -->
         <div class="icon" data-name="Mago" data-description="Maestro de las artes arcanas, el mago lanza poderosos hechizos a distancia, controlando los elementos." data-img="mago.jpg">
             <img src="mago-icon.png" alt="Mago" class="icon-img">
         </div>
     </div>
-
-    <!-- Nueva sección de exploración -->
-    <section class="exploration-section">
-        <div class="exploration-text">
-            <h2>Exploración</h2>
-            <p>
-                La exploración es una parte esencial de la aventura en *Eurolatam Dungeon Heroes*. A medida que recorres vastos paisajes y oscuros pasadizos, puedes encontrar estructuras como mazmorras ocultas, poblados llenos de vida, y misteriosas ruinas. Cada lugar guarda secretos que enriquecerán tu experiencia y recompensas que pueden cambiar el curso de tu viaje.
-            </p>
-        </div>
-        <div class="carousel-container">
-            <div class="carousel">
-                <img src="dungeon.jpg" alt="Mazmorra">
-                <img src="village.jpg" alt="Poblado">
-                <img src="ruins.jpg" alt="Ruinas">
-                <img src="forest.jpg" alt="Bosque">
-            </div>
-        </div>
-    </section>
+    
+    <div class="tooltip">
+        <h3 id="class-name"></h3>
+        <p id="class-description"></p>
+        <img id="class-img" src="" alt="Clase">
+    </div>
 
     <script src="script.js"></script>
 </body>
