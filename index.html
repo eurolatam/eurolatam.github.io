@@ -4,65 +4,152 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eurolatam Dungeon Heroes</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        header h1 {
+            font-size: 3em;
+            color: #fff;
+        }
+        .classes-section {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+        .class-card {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            overflow: hidden;
+        }
+        .class-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .class-info {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            text-align: center;
+            transition: bottom 0.3s ease-in-out;
+        }
+        .class-card:hover .class-info {
+            bottom: 0;
+        }
+        .exploration-section {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+        .exploration-text {
+            flex: 1;
+            padding: 20px;
+            font-size: 1.2em;
+        }
+        .carousel {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            height: 300px;
+        }
+        .carousel-track {
+            display: flex;
+            animation: scroll 20s linear infinite;
+        }
+        .carousel-track img {
+            flex-shrink: 0;
+            width: auto;
+            height: 100%;
+        }
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+    </style>
 </head>
 <body>
-    <header class="header">
-        <img src="background.jpg" alt="Fondo" class="background">
-        <div class="logo">EUROLATAM DUNGEON HEROES</div>
+    <header>
+        <h1>Eurolatam Dungeon Heroes</h1>
     </header>
 
-    <main>
-        <section class="classes-section">
-            <h2>Clases</h2>
-            <div class="classes-container">
-                <div class="class-card" id="arquero">
-                    <img src="arquero.jpg" alt="Arquero">
-                    <h3>Arquero</h3>
-                    <div class="class-info">Especialista en combate a larga distancia con arco y flecha. Ágil y letal en el campo de batalla.</div>
-                </div>
-                <div class="class-card" id="paladin">
-                    <img src="paladin.jpg" alt="Paladín">
-                    <h3>Paladín</h3>
-                    <div class="class-info">Guerrero sagrado, defensor del bien, que lucha con un mazo y una fe inquebrantable.</div>
-                </div>
-                <div class="class-card" id="sacerdote">
-                    <img src="sacerdote.jpg" alt="Sacerdote">
-                    <h3>Sacerdote</h3>
-                    <div class="class-info">Líder espiritual que usa magia divina para sanar a sus compañeros y maldecir a sus enemigos.</div>
-                </div>
-                <div class="class-card" id="picaro">
-                    <img src="picaro.jpg" alt="Pícaro">
-                    <h3>Pícaro</h3>
-                    <div class="class-info">Astuto y sigiloso, el pícaro se especializa en el robo, el sigilo y el combate con dagas.</div>
-                </div>
-                <div class="class-card" id="guerrero">
-                    <img src="guerrero.jpg" alt="Guerrero">
-                    <h3>Guerrero</h3>
-                    <div class="class-info">Clase fuerte y resistente, ideal para el combate cuerpo a cuerpo y la defensa de su equipo.</div>
-                </div>
-                <div class="class-card" id="mago">
-                    <img src="mago.jpg" alt="Mago">
-                    <h3>Mago</h3>
-                    <div class="class-info">Maestro de las artes arcanas, el mago lanza poderosos hechizos a distancia, controlando los elementos.</div>
-                </div>
+    <section class="classes-section">
+        <div class="class-card">
+            <img src="arquero.jpg" alt="Arquero">
+            <div class="class-info">
+                <h3>Arquero</h3>
+                <p>Especialista en combate a larga distancia con arco y flecha. Ágil y letal en el campo de batalla.</p>
             </div>
-        </section>
+        </div>
+        <div class="class-card">
+            <img src="paladin.jpg" alt="Paladín">
+            <div class="class-info">
+                <h3>Paladín</h3>
+                <p>Guerrero sagrado, defensor del bien, que lucha con un mazo y una fe inquebrantable.</p>
+            </div>
+        </div>
+        <div class="class-card">
+            <img src="sacerdote.jpg" alt="Sacerdote">
+            <div class="class-info">
+                <h3>Sacerdote</h3>
+                <p>Líder espiritual que usa magia divina para sanar a sus compañeros y maldecir a sus enemigos.</p>
+            </div>
+        </div>
+        <div class="class-card">
+            <img src="picaro.jpg" alt="Pícaro">
+            <div class="class-info">
+                <h3>Pícaro</h3>
+                <p>Astuto y sigiloso, el pícaro se especializa en el robo, el sigilo y el combate con dagas.</p>
+            </div>
+        </div>
+        <div class="class-card">
+            <img src="guerrero.jpg" alt="Guerrero">
+            <div class="class-info">
+                <h3>Guerrero</h3>
+                <p>Clase fuerte y resistente, ideal para el combate cuerpo a cuerpo y la defensa de su equipo.</p>
+            </div>
+        </div>
+        <div class="class-card">
+            <img src="mago.jpg" alt="Mago">
+            <div class="class-info">
+                <h3>Mago</h3>
+                <p>Maestro de las artes arcanas, el mago lanza poderosos hechizos a distancia, controlando los elementos.</p>
+            </div>
+        </div>
+    </section>
 
-        <section class="exploration-section">
+    <section class="exploration-section">
+        <div class="exploration-text">
             <h2>Exploración</h2>
-            <div class="exploration-content">
-                <p>La exploración es crucial en **Eurolatam Dungeon Heroes**. Durante tus viajes, encontrarás poblados, mazmorras y estructuras de todo tipo, además de enfrentarte a numerosos peligros. Sin embargo, explorar es esencial para progresar en tu aventura y descubrir recursos valiosos, secretos y misiones emocionantes.</p>
-                <div class="carousel">
-                    <div class="carousel-track">
-                        <img src="img1.jpg" alt="Mazmorra">
-                        <img src="img2.jpg" alt="Poblado">
-                        <img src="img3.jpg" alt="Tesoro">
-                        <img src="img4.jpg" alt="Estructura antigua">
-                    </div>
-                </div>
+            <p>La exploración es clave en Eurolatam Dungeon Heroes. Durante tus viajes, descubrirás poblados, mazmorras, y estructuras de todo tipo. Cada aventura está llena de peligros, pero la exploración es esencial para progresar en tu historia y desvelar los secretos del mundo.</p>
+        </div>
+        <div class="carousel">
+            <div class="carousel-track">
+            <img src="img1.jpg" alt="Mazmorra">
+            <img src="img2.jpg" alt="Poblado">
+            <img src="img3.jpg" alt="Tesoro">
+            <img src="img4.jpg" alt="Estructura antigua">
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 </body>
 </html>
+
