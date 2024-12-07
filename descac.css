@@ -16,8 +16,10 @@ body {
 }
 
 .logo {
-    width: 500px; /* Ajusta el tamaño del logo */
-    margin-bottom: 20px;
+            font-size: 3rem;
+            font-weight: bold;
+            color: #f0d000;
+            padding: 20px 0;
 }
 
 .buttons {
